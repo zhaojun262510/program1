@@ -1,0 +1,207 @@
+\documentclass[UTF8,a4paper]{ctexart}
+%\usepackage[UTF8]{ctex}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{geometry}
+\geometry{a4paper,scale=0.8}
+\usepackage{setspace}
+\setstretch{1.6}
+
+\begin{document}
+\begin{sloppypar}
+
+
+	\begin{center}
+	\includegraphics[width = 14cm]{picture/s1}
+
+		\begin{fontsize}{60pt}{20pt}
+			实验报告
+		\end{fontsize}
+
+		\bigskip
+		\bigskip
+		
+		\begin{fontsize}{20pt}{20pt}
+			\begin{flushright}
+				—— {\Huge Git}与{\Huge Latex}的学习与应用
+			\end{flushright}
+		\end{fontsize}
+		
+		\bigskip
+		\bigskip
+		\bigskip
+		\bigskip
+		\bigskip
+		\bigskip
+		\bigskip
+		\bigskip
+		\bigskip
+		\bigskip
+		\bigskip
+		\bigskip
+		\bigskip
+		\bigskip
+		\bigskip
+		\bigskip
+		
+		\begin{fontsize}{25pt}{20pt}
+
+			学号：
+			\underline{{\huge 23090013035}}
+			\bigskip
+			\bigskip
+			\bigskip
+			\bigskip
+
+			姓名：
+			\underline{朱永基}
+			\bigskip
+			\bigskip
+			\bigskip
+			\bigskip
+
+			班级：
+			\underline{{\Huge 23}级工程管理}
+				
+		\end{fontsize}
+	\end{center}
+	\section{实验要求}
+	\subsection{学习Git和Late的使用}
+	\subsection{完成4个课堂练习与20个与Git和Latex有关的实例}
+
+	\section{实验内容}
+	\subsection{Git的学习}
+	\subsubsection{Git是一个开源的分布式版本控制系统，用于高效地管理和跟踪代码的变化。它由Linus Torvalds于2005年开发，最初是为了更好地管理Linux内核的开发过程。Git具有许多强大的功能，适用于各种规模的项目，尤其在开源社区和企业级开发中广泛使用。}
+	\subsubsection{Git的关键特点和功能：\\1.分布式版本控制\\2.高效的分支管理\\3.数据完整性\\4.高效处理大项目\\5.开源与社区支持}
+	\subsubsection{常用Git命令：\\git init：初始化一个新的Git仓库\\git clone：克隆一个远程仓库到本地\\git add：将文件的更改添加到暂存区\\git commit：将暂存区的更改提交到本地仓库\\git pull：从远程仓库拉取最新的更改并合并到本地\\git push：将本地提交推送到远程仓库\\git branch：列出、创建或删除分支\\git checkout：切换到指定的分支或提交}
+	
+	\subsection{Latex的学习}
+	\subsubsection{LaTeX 是一种基于排版系统的文档编写工具，广泛应用于科学、工程、数学、计算机科学等领域的学术论文、技术文档、书籍和报告的撰写。}
+	\subsubsection{LaTex的特点和优势：\\1.高质量排版\\2.结构化文档\\3.可扩展性\\4.跨平台\\5.免费开源}
+	
+
+	\newpage
+
+	\section{实验中遇到的问题与解决方法}
+	\subsection{使用Latex撰写实验报告时，发现编译出来的PDF文档中出现部分文字无法显示或显示不全的问题}
+	原因是内容太多而 LaTeX 无法自动分页，使用newpag命令手动添加分页，即可显示全部文字。
+	\subsection{在向仓库中提交敏感信息时，无法提交并显示who you are？}
+	这是由于没有登记个人信息，在命令行终端输入指令git config --global user.email "邮箱"、git config --global user.name "名称"，登记个人名称和邮箱之后即解决。
+	\subsection{在使用Latex进行文本编辑时，无法显示中文}
+	查阅资料后得知，Latex基础字体不包含中文，有两种方法，一为导入含有中文字体的宏包，二可以设置文章类型，采用经过国人开发的ctexbook、ctexart和ctexbeamer类型，这些类型自带了对中文的支持，且编译器要换成XeLaTex。
+	\subsection{即使加入了graphicx宏包也无法插入图片}
+	想要插入图片需要将图片放在与tex文件同一目录中，或者通过语句graphicspath引入图片所在的文件夹，用includegraphics语句来表示要插入的图片、设置图片的长宽。
+	\subsection{完成文本写作后,结果第一页是空白页，文本内容从第二页开始}
+	第一页默认为封面页，需要添加封面。
+	
+	\graphicspath{{picture/}}
+	\section{实例练习}
+	\subsection{创建Git仓库}
+	输入git status命令，查看是否为仓库，并输入git init命令，初始化git仓库
+	
+	\includegraphics[width = 16cm]{1}
+	
+	\subsection{查看当前状态}
+	输入git status指令，显示当前工作目录和暂存区的状态，提示仓库中有文件未追踪
+	
+	\includegraphics[width = 16cm]{2}
+	
+	\subsection{添加文件}
+	git add "文件名"，将文件添加到git仓库
+	
+	\includegraphics[width = 16cm]{3}
+	
+	\subsection{提交文件}
+	git commit -m "提交信息"，将文件提交到仓库中，并附上提交信息
+	
+	\includegraphics[width = 16cm]{4}
+	
+	\subsection{查看提交日志}
+	git log，显示当前分支的提交历史，包括提交ID、作者、日期和提交信息
+	
+	\includegraphics[width = 16cm]{5}
+	
+	\subsection{创建仓库分支并查看}
+	git branch命令，查看 Git 仓库的分支情况，git branch a 则为创建一个名为a的分支，当前分支仍为主分支
+	
+	\includegraphics[width = 16cm]{6}
+	
+	\subsection{切换分支}
+	输入git checkout a命令，切换到a分支，也可以在创建分支的同时，直接切换到新分支，命令为git checkout -b
+	
+	\includegraphics[width = 16cm]{7}
+	
+	\subsection{合并分支}
+	切换到master分支，然后输入git merge a命令，将a分支合并到master分支
+	
+	\includegraphics[width = 16cm]{8}
+	
+	\subsection{删除其他分支}
+	输入git branch -d a命令，删除a分支。有时通过git branch -d命令出现删除不了的现象，例如分支a的代码没有合并到主分支等，这时可以通过命令git branch -D进行强制删除
+	
+	\includegraphics[width = 16cm]{9}
+	
+	\subsection{关联远程仓库}
+	git remote add origin "远程仓库地址" 命令，关联远程仓库，其中origin为远程仓库的名字
+	
+	\includegraphics[width = 16cm]{10}
+	
+	\subsection{本地代码推到远程仓库}
+	如果我们本地的代码有了更新，为了保持本地与远程的代码同步，我们就需要把本地的代码推到远程的仓库，使用git push origin master命令
+	
+	\includegraphics[width = 16cm]{11}
+	
+	\subsection{远程代码拉到本地}
+	如果我们远程仓库的代码有了更新，同样为了保持本地与远程的代码同步，我们就需要把远程的代码拉到本地，使用git pull origin master命令
+	
+	\includegraphics[width = 16cm]{12}
+	
+	\subsection{Latex实现中文}
+	采用文章类型如经过国人开发的ctexbook、ctexart和ctexbeamer类型，自带中文支持，并且编译器换为XeLaTex
+	
+	\includegraphics[width = 16cm]{13}
+	
+	\subsection{实现标题与作者等}
+	可以用title、author、date来设置，日期中选择today会自动输出编译当天的日期。它们只能放在导言区，然后通过maketitle展现出来
+	
+	\includegraphics[width = 16cm]{14}
+	
+	\subsection{实现文章段落}
+	章节分三阶，section、subsection、subsubsection，在它们后面的花括号中填写题目，加入*则可以消去前面对应的序数
+	
+	\includegraphics[width = 16cm]{15}
+	
+	\subsection{插入图片}
+	插入图片需要使用graphicx宏包，使用includegraphics，可以在width=后设置宽度
+	
+	\includegraphics[width = 16cm]{16}
+	
+	\subsection{插入代码}
+	调用listings宏包，并且在正文中使用lstlisting指令框住所想插入的代码，后面的中括号框内的语言选项帮助关键字高亮
+	
+	\includegraphics[width = 16cm]{17}
+	
+	\subsection{注释}
+	Latex可以实现单行注释和多行注释
+	
+	\includegraphics[width = 12cm]{18}
+	
+	\subsection{插入超链接}
+	导入宏包url，使用url+链接
+	
+	\includegraphics[width = 16cm]{19}
+	
+	\subsection{数学公式}
+	输入数学公式需要导入宏包amsmath，使用equation
+	
+	\includegraphics[width = 16cm]{20}
+
+	\section{实验收获与感悟}
+	通过学习Git和LaTeX，我深刻体会到版本控制在项目管理中的重要性。Git不仅能够有效记录和更改项目版本，还能帮助解决冲突。我掌握了Git的分支管理和合并技巧，明白了它在团队协作中作为沟通桥梁的重要作用，这能够大大减少沟通成本并提升工作效率。这次学习让我进一步适应了Git的独特工作方式和思维模式。\\
+	\indent LaTeX凭借其卓越的排版能力，可以生成美观、专业的文档，尤其是其强大的数学公式编辑功能，能够轻松呈现复杂的数学表达式，提升论文的可读性并确保符合学术规范。此外，我还学会了如何在网上查找合适的论文模板，并将其tex文件移植过来，极大地提高了写论文的效率。这为我未来撰写数学建模比赛论文奠定了坚实基础。\\
+	\indent 虽然学习Git和LaTeX的过程充满挑战，但它们带给我的收获和启发却是巨大的。Git让我掌握了版本控制和团队协作的核心要素，而LaTeX则让我能够以更专业和高效的方式编写文档。这两种工具不仅提升了我的技术能力，也让我更深入地理解了项目管理和学术研究的本质。我相信在未来的学习和工作中，它们将继续发挥重要作用，并为我提供有力的支持。\\
+	
+	Github仓库链接：\url{https://github.com/zhaojun262510/program1#}
+	
+\end{sloppypar}
+\end{document}
